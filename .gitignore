@@ -1,0 +1,33 @@
+# Environment & Secrets
+.env
+.env*.local
+
+# Separate Unrelated Projects
+simple-button-website/
+
+# Dependencies
+node_modules/
+venv/
+.venv/
+env/
+
+# Python Cache & Builds
+__pycache__/
+*.py[cod]
+*$py.class
+*.spec.bak
+
+# Build outputs & Executables
+build/
+dist/
+dist-desktop/
+out/
+release/
+*.exe
+*.msi
+
+# OS & Editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

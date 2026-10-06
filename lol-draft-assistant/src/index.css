@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family: 'Barlow', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+    'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* Transparent so the game shows through the Electron overlay window. */
+  background-color: transparent;
+}
+
+#root {
+  background-color: transparent;
+}
+
+/* ---------------------------------------------------------------------------
+   Global window drag handle
+   ---------------------------------------------------------------------------
+   AppLayoutWrapper injects `.global-app-drag-handle` at the top of every view.
+   The `-webkit-app-region: drag` rule turns that strip into a native drag zone
+   so the frameless Electron window can be repositioned by clicking + holding
+   near the top edge. Interactive controls must opt out with `.no-drag`.
+--------------------------------------------------------------------------- */
+.global-app-layout {
+  position: relative;
+  min-height: 100vh;
+}
+
+.global-app-drag-handle {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 32px;
+  z-index: 9999;
+  /* Invisible: the game/app shows through, but the strip is grabbable. */
+  background: transparent;
+  /* Electron: dragging this region moves the whole frameless window. */
+  -webkit-app-region: drag;
+  cursor: move;
+}
+
+/* Buttons, inputs and other interactive elements must remain clickable even
+   if they sit under/near the drag region. Add `no-drag` to any such element. */
+.no-drag,
+button,
+input,
+textarea,
+select,
+a {
+  -webkit-app-region: no-drag;
+}
