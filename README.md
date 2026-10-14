@@ -1,4 +1,4 @@
-# LoL Live Overlay + Draft Assistant
+# LoL Live Overlay + Draft Assistant (AI was used to code the majority of this project)
 
 > A Hextech-themed desktop companion for League of Legends: an ML-powered champion-select assistant and a low-latency, click-through in-game overlay that tracks your economy in real time.
 
